@@ -1,0 +1,11 @@
+@import './baseColors.css';
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  background-color: var(--rosa);
+
+  height: 200vh;
+}

@@ -1,0 +1,54 @@
+@import '../../baseColors.css';
+
+.header{
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, 0%);
+  top: 0%;
+  left: 50%;
+  padding: 2vh 5%;
+
+  border-radius: 20px;
+  border: 1px solid var(--navbar-border);
+
+  background-color: var(--navbar-bg);
+  /* color: var(--texto-navbar); */
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    width: 75vw;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+.header.visible {
+  top: 3%;
+
+  transform: translate(-50%, 0%);
+}
+
+
+.user-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+
+  mix-blend-mode: difference;
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: #eb7878;
+  }
+}
