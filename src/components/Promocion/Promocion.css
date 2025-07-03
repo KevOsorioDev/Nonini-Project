@@ -1,0 +1,27 @@
+@import '../../baseColors.css';
+
+.promocion{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 10px;
+
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+
+  background-color: var(--rosa-promocion);
+  color: var(--promocion-text);
+  
+  transition: top 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.promocion.transformed {
+  top: -5%;
+  /* transform: translate(-50%, 0%); */
+
+  transition: top 0.3s ease-in-out;
+}

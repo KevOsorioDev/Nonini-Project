@@ -1,6 +1,9 @@
 :root {
+  --rosa-promocion: #fea5a5;
+  --promocion-text: #fff4f4;
   --rosa: #eea8a8;
-  --navbar-bg: #eb787880;
-  --boton-text: #ffebeb;
-  --bottom-text-hover: #ffffff;
+  --navbar-bg: #eb7878a0;
+  --navbar-bg-scrolled: #fff5fb;  
+  --navbar-color-buttons: #eb7878c1;
+  --navbar-color-buttons--hover: #5b2c2cc1;
 }

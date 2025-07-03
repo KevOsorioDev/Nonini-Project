@@ -1,0 +1,135 @@
+@import '../../baseColors.css';
+
+.card-container {
+  /* Posicionamiento */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Box */
+  perspective: 1000px;
+  padding: 2rem;
+}
+
+.card {
+  /* Posicionamiento */
+  /* (ninguno extra) */
+
+  /* Box */
+  width: 23vw;
+  /* max-width: 30rem; */
+  padding: 1.5rem;
+  border-radius: 1rem;
+
+  /* Colores */
+  background: var(--navbar-bg-scrolled);
+
+  /* Miscelánea */
+  transition: transform 0.15s ease, background 1s ease, box-shadow 0.15s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(243, 243, 243, .8);
+  }
+}
+
+.card-title {
+  margin-top: 7px;
+  margin-bottom: 1px;
+
+  /* Texto */
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  /* Colores */
+  color: var(--navbar-color-buttons--hover);
+}
+
+.card-description {
+  /* Box */
+  /* margin-top: 1rem; */
+  max-width: 90%;
+
+  /* Texto */
+  font-size: 1rem;
+  /* font-weight: 600; */
+
+  /* Colores */
+  color: #1111119c;
+}
+
+.card-image {
+  /* Posicionamiento */
+  margin-top: 1rem;
+
+  /* Miscelánea */
+  transform: translateZ(50px);
+}
+
+.card-image img {
+  /* Box */
+  width: 100%;
+  height: 15rem;
+  border-radius: 0.75rem;
+  object-fit: cover;
+
+  /* Colores */
+  /* (ninguno extra) */
+
+  /* Miscelánea */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-footer {
+  /* Posicionamiento */
+  display: flex;
+  justify-content: space-between;
+
+  /* Box */
+  margin-top: 2rem;
+
+  /* Miscelánea */
+  transform: translateZ(30px);
+}
+
+.card-link {
+  /* Box */
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+
+  /* Texto */
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  /* Colores */
+  color: #333;
+
+  /* Miscelánea */
+  text-decoration: none;
+}
+
+.card-button {
+  /* Box */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.75rem;
+
+  /* Texto */
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  /* Colores */
+  background: var(--navbar-color-buttons--hover);
+  color: white;
+
+  /* Miscelánea */
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.card-button:hover {
+  background: #333;
+}

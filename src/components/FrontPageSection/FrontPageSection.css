@@ -1,0 +1,30 @@
+@import '../../baseColors.css';
+
+.front-page-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  width: 90vw;
+  padding-bottom: 10vh;
+
+  margin: 0 auto;
+
+  h3{
+    font-size: 3rem;
+
+    color: var(--navbar-color-buttons--hover);
+    text-align: center;
+    margin: 0;
+  }
+
+  .cards-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}

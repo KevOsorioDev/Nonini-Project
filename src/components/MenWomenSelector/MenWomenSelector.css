@@ -1,0 +1,40 @@
+@import '../../baseColors.css';
+
+.men-women-selector {
+  display: flex;
+  gap: .1rem;
+
+  button {
+    border: none;
+    background: none;
+    font-size: 1.4rem;
+    color: var(--navbar-color-buttons--hover);
+    cursor: pointer;
+    padding: 0.5rem 1.2rem 0.3rem 1.2rem;
+    transition: 
+      color 0.2s,
+      font-weight 0.2s,
+      transform 0.2s;
+    position: relative;
+    font-weight: 500;
+  }
+
+  button.active {
+    /* font-weight: 700; */
+    transform: scale(1.1);
+    color: var(--navbar-color-buttons);
+  }
+
+  button.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    bottom: 0;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--navbar-color-buttons);
+    transition: background 0.2s;
+  }
+}

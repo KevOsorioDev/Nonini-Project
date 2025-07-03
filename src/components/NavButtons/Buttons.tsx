@@ -1,62 +1,45 @@
+import { useState } from 'react';
 import './Buttons.css'
 
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+type DropDownOption = {
+  label: string;
+  onClick: () => void;
+}
 
-import {
-  ArchiveBoxXMarkIcon,
-  ChevronDownIcon,
-  PencilIcon,
-  Square2StackIcon,
-  TrashIcon
-} from '@heroicons/react/24/solid'
+type DropDownButtonProps = { 
+  dropDownLabel: string;
+  options?: DropDownOption[];
+}
 
-export const DropDownButton = () => {
+export const DropDownButton = ({ dropDownLabel, options = [] }: DropDownButtonProps) => {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="menu-container">
-      <Menu>
-        <MenuButton className="menu-button">
-          Nuestros modelos
-          <ChevronDownIcon className="menu-icon-chevron" />
-        </MenuButton>
-        <MenuItems
-          transition
-          anchor="bottom end"
-          className="menu-items"
-        >
-
-          <MenuItem>
-            <button className="menu-item group">
-              <PencilIcon className="menu-icon" />
-              Edit
-              <kbd className="menu-kbd">⌘E</kbd>
-            </button>
-          </MenuItem>
-          <MenuItem>
-            <button className="menu-item group">
-              <Square2StackIcon className="menu-icon" />
-              Duplicate
-              <kbd className="menu-kbd">⌘D</kbd>
-            </button>
-          </MenuItem>
-          <div className="menu-divider" />
-          <MenuItem>
-            <button className="menu-item group">
-              <ArchiveBoxXMarkIcon className="menu-icon" />
-              Archive
-              <kbd className="menu-kbd">⌘A</kbd>
-            </button>
-          </MenuItem>
-          <MenuItem>
-            <button className="menu-item group">
-              <TrashIcon className="menu-icon" />
-              Delete
-              <kbd className="menu-kbd">⌘D</kbd>
-            </button>
-          </MenuItem>
-
-        </MenuItems>
-      </Menu>
+    <>
+    <div className='dropdown-container'>
+      <button className='dropdown-button' onClick={() => setMenuOpen(!menuOpen)}>
+        <span className={`dropdown-button-text ${menuOpen ? 'menu-open' : ''}`}>
+          {dropDownLabel}
+        </span>
+        <i className={`fa-solid fa-chevron-down dropdown-icon ${menuOpen ? 'open' : ''}`}></i>
+      </button>
+      <div className={`dropdown-menu ${menuOpen ? 'open' : 'closed'}`}>
+        {options.map((option: DropDownOption, index: number) => (
+          <button 
+            key={index} 
+            className='dropdown-menu-item' 
+            onClick={() => {
+              option.onClick();
+              setMenuOpen(false);
+            }}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
     </div>
+    </>
   )
 }
 
